@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFBB7682-623C-404F-BA56-6A7F4D7097E7}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mtf.Hardware</RootNamespace>
+    <AssemblyName>Mtf.Hardware</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>../Mtf.ConsoleStart/bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>../Mtf.ConsoleStart/bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Raid\Amcc3Ware\Alarm.cs" />
+    <Compile Include="Raid\Amcc3Ware\AMCC_3Ware_State.cs" />
+    <Compile Include="Raid\Amcc3Ware\Attributes.cs" />
+    <Compile Include="Raid\Amcc3Ware\BBU.cs" />
+    <Compile Include="Raid\Amcc3Ware\CLI_and_API_Version.cs" />
+    <Compile Include="Raid\Amcc3Ware\CommandExecutor.cs" />
+    <Compile Include="Raid\Amcc3Ware\Controller.cs" />
+    <Compile Include="Raid\Amcc3Ware\Enclosure.cs" />
+    <Compile Include="Raid\Amcc3Ware\Enum\Cache_Policy.cs" />
+    <Compile Include="Raid\Amcc3Ware\Enum\Decide.cs" />
+    <Compile Include="Raid\Amcc3Ware\Enum\JBOD_Export_Policy.cs" />
+    <Compile Include="Raid\Amcc3Ware\Enum\OnOff.cs" />
+    <Compile Include="Raid\Amcc3Ware\Enum\OnOffUnknown.cs" />
+    <Compile Include="Raid\Amcc3Ware\Enum\StartStop.cs" />
+    <Compile Include="Raid\Amcc3Ware\Enum\TW_CLI_ParameterType.cs" />
+    <Compile Include="Raid\Amcc3Ware\GraphicalDisplay.cs" />
+    <Compile Include="Raid\Amcc3Ware\Port.cs" />
+    <Compile Include="Raid\Amcc3Ware\Schedule.cs" />
+    <Compile Include="Raid\Amcc3Ware\SelfTest.cs" />
+    <Compile Include="Raid\Amcc3Ware\SubUnit.cs" />
+    <Compile Include="Raid\Amcc3Ware\Unit.cs" />
+    <Compile Include="Raid\Areca\ArecaController.cs" />
+    <Compile Include="Raid\Areca\ArecaEvent.cs" />
+    <Compile Include="Raid\Areca\ArecaRaidState.cs" />
+    <Compile Include="Raid\Areca\CommandParser.cs" />
+    <Compile Include="Raid\Areca\Disk.cs" />
+    <Compile Include="Raid\Areca\Enum\BeeperState.cs" />
+    <Compile Include="Raid\Areca\Enum\Decide.cs" />
+    <Compile Include="Raid\Areca\Enum\EnableDisable.cs" />
+    <Compile Include="Raid\Areca\Enum\GreaterThan2TbVolumeSupport.cs" />
+    <Compile Include="Raid\Areca\Enum\HostMode.cs" />
+    <Compile Include="Raid\Areca\Enum\Priority.cs" />
+    <Compile Include="Raid\Areca\Enum\RaidLevel.cs" />
+    <Compile Include="Raid\Areca\Enum\StripeSize.cs" />
+    <Compile Include="Raid\Areca\RaidSet.cs" />
+    <Compile Include="Raid\Areca\VolumeSet.cs" />
+    <Compile Include="Raid\ProgramRunner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mtf.Core\Mtf.Core.csproj">
+      <Project>{934f82a9-7df7-4f71-b0b9-5c714e620a83}</Project>
+      <Name>Mtf.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mtf.File\Mtf.File.csproj">
+      <Project>{8acd114d-04d7-4b14-9ea8-d168fca108c6}</Project>
+      <Name>Mtf.File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mtf.Reflection\Mtf.Reflection.csproj">
+      <Project>{D49FE7D3-B4CB-4550-8C00-A1B6FB5E639A}</Project>
+      <Name>Mtf.Reflection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mtf.Utils\Mtf.Utils.csproj">
+      <Project>{5F2E4455-1F6B-4A6B-8AC1-3BD1D0DE2B0B}</Project>
+      <Name>Mtf.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9FE3ED3D-99D5-4A44-A5A8-97D8005A1741}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mtf.Network</RootNamespace>
+    <AssemblyName>Mtf.Network</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>../Mtf.ConsoleStart/bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>../Mtf.ConsoleStart/bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BitfieldLengthAttribute.cs" />
+    <Compile Include="Client\ClientBase.cs" />
+    <Compile Include="Client\ClientList.cs" />
+    <Compile Include="Client\ClientType.cs" />
+    <Compile Include="Client\DataArrivedEventArgs.cs" />
+    <Compile Include="Client\DisconnectionEventArgs.cs" />
+    <Compile Include="Ftp\FtpClient.cs" />
+    <Compile Include="Ftp\RepresentationType.cs" />
+    <Compile Include="Ftp\Structure.cs" />
+    <Compile Include="Ftp\TextInterpretation.cs" />
+    <Compile Include="Ftp\TransmissionMode.cs" />
+    <Compile Include="Host\IpAddressSetting.cs" />
+    <Compile Include="Host\IpWithPort.cs" />
+    <Compile Include="Http\HttpClient.cs" />
+    <Compile Include="Http\WebRequestExecuter.cs" />
+    <Compile Include="MIB_States.cs" />
+    <Compile Include="NetworkModule.cs" />
+    <Compile Include="Ftp\FtpFileReceiverClient.cs" />
+    <Compile Include="Host\ComputerNameProvider.cs" />
+    <Compile Include="Host\HostnameProvider.cs" />
+    <Compile Include="Host\IpAddressProvider.cs" />
+    <Compile Include="Host\IpUtils.cs" />
+    <Compile Include="Host\IpClass.cs" />
+    <Compile Include="Icmp\IcmpEchoAllower.cs" />
+    <Compile Include="Icmp\Ping.cs" />
+    <Compile Include="Icmp\PingReplyMessage.cs" />
+    <Compile Include="Icmp\PingReplyArrivedEventArgs.cs" />
+    <Compile Include="Icmp\IpStatusDescriptionProvider.cs" />
+    <Compile Include="InetAddrConverter.cs" />
+    <Compile Include="IpHdr.cs" />
+    <Compile Include="NetworkStatistics.cs" />
+    <Compile Include="Packets\Http\HttpPacket.cs" />
+    <Compile Include="Packets\Http\HttpMethod.cs" />
+    <Compile Include="Packets\Http\HttpProtocolVersion.cs" />
+    <Compile Include="Packets\Snmp\OidConverter.cs" />
+    <Compile Include="Packets\Snmp\SnmpMessage.cs" />
+    <Compile Include="Packets\Snmp\SnmpPacket.cs" />
+    <Compile Include="Packets\Snmp\SnmpMethod.cs" />
+    <Compile Include="Packets\Snmp\SnmpTypes.cs" />
+    <Compile Include="PhysicalAddress\MacAddressConverter.cs" />
+    <Compile Include="PhysicalAddress\MacAddressProvider.cs" />
+    <Compile Include="PhysicalAddress\SystemErrorCodes.cs" />
+    <Compile Include="PhysicalAddress\WakeOnLan.cs" />
+    <Compile Include="Port\FreePortProvider.cs" />
+    <Compile Include="Port\Port.cs" />
+    <Compile Include="Port\PortConnector.cs" />
+    <Compile Include="Port\PortExaminer.cs" />
+    <Compile Include="Port\PortInfoProvider.cs" />
+    <Compile Include="Port\PortProperties.cs" />
+    <Compile Include="Port\PortScanner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol.cs" />
+    <Compile Include="Smtp\EmailAddress.cs" />
+    <Compile Include="Smtp\SmtpClient.cs" />
+    <Compile Include="Snmp\SnmpClient.cs" />
+    <Compile Include="Snmp\SnmpStatus.cs" />
+    <Compile Include="Snmp\SnmpTypes.cs" />
+    <Compile Include="Soap\SoapClient.cs" />
+    <Compile Include="Sockets\MessageSender.cs" />
+    <Compile Include="Sockets\SocketChecker.cs" />
+    <Compile Include="Sockets\SocketCloser.cs" />
+    <Compile Include="Sockets\SocketProvider.cs" />
+    <Compile Include="SynSender.cs" />
+    <Compile Include="TcpHdr.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mtf.Core\Mtf.Core.csproj">
+      <Project>{934f82a9-7df7-4f71-b0b9-5c714e620a83}</Project>
+      <Name>Mtf.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mtf.Linux\Mtf.Linux.csproj">
+      <Project>{279FC3B8-9A5F-4B1B-99AA-A70A6A563EE7}</Project>
+      <Name>Mtf.Linux</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mtf.Reflection\Mtf.Reflection.csproj">
+      <Project>{D49FE7D3-B4CB-4550-8C00-A1B6FB5E639A}</Project>
+      <Name>Mtf.Reflection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mtf.Utils\Mtf.Utils.csproj">
+      <Project>{5F2E4455-1F6B-4A6B-8AC1-3BD1D0DE2B0B}</Project>
+      <Name>Mtf.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

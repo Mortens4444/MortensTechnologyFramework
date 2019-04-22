@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F2E4455-1F6B-4A6B-8AC1-3BD1D0DE2B0B}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mtf.Utils</RootNamespace>
+    <AssemblyName>Mtf.Utils</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>../Mtf.ConsoleStart/bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>../Mtf.ConsoleStart/bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ByteArrayExtensions\BaseExtensions.cs" />
+    <Compile Include="ByteArrayExtensions\Equality.cs" />
+    <Compile Include="ByteArrayExtensions\String.cs" />
+    <Compile Include="ByteExtensions\BaseExtensions.cs" />
+    <Compile Include="CharExtensions\BaseExtensions.cs" />
+    <Compile Include="CharExtensions\CharStates.cs" />
+    <Compile Include="CharExtensions\Cryptography.cs" />
+    <Compile Include="CharExtensions\Grammar.cs" />
+    <Compile Include="CharExtensions\NumberSystems.cs" />
+    <Compile Include="CharExtensions\Password.cs" />
+    <Compile Include="CharExtensions\PasswordCharacters.cs" />
+    <Compile Include="CharExtensions\Simulator.cs" />
+    <Compile Include="DateExtensions\Convertions.cs" />
+    <Compile Include="DateExtensions\Database.cs" />
+    <Compile Include="DateExtensions\Day.cs" />
+    <Compile Include="DateExtensions\DayConverter.cs" />
+    <Compile Include="DateExtensions\SYSTEMTIME.cs" />
+    <Compile Include="DateExtensions\UnixTimeConverter.cs" />
+    <Compile Include="DateExtensions\UptimeMeasure.cs" />
+    <Compile Include="DoubleExtensions\BaseExtensions.cs" />
+    <Compile Include="EnumExtensions\BaseExtensions.cs" />
+    <Compile Include="EnumExtensions\SecondaryValueAttribute.cs" />
+    <Compile Include="Enum\KeyboardEventFlags.cs" />
+    <Compile Include="Enum\KeyModifier.cs" />
+    <Compile Include="Enum\LoadKeyboardLayoutFlags.cs" />
+    <Compile Include="Enum\MapVirtualKeyMapTypes.cs" />
+    <Compile Include="Enum\VirtualKeyCodes.cs" />
+    <Compile Include="Generics\Equality.cs" />
+    <Compile Include="Int64Extensions\Time.cs" />
+    <Compile Include="IntExtensions\BaseExtensions.cs" />
+    <Compile Include="Mathematics\FactorizationResult.cs" />
+    <Compile Include="Mathematics\Geometry.cs" />
+    <Compile Include="Mathematics\NumberTherory.cs" />
+    <Compile Include="PointExtensions\PointUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomUtils.cs" />
+    <Compile Include="RectangleExtensions\BaseExtensions.cs" />
+    <Compile Include="StringExtensions\Combinatorics.cs" />
+    <Compile Include="StringExtensions\Command.cs" />
+    <Compile Include="StringExtensions\Convertions.cs" />
+    <Compile Include="StringExtensions\Cryptography.cs" />
+    <Compile Include="StringExtensions\Database.cs" />
+    <Compile Include="StringExtensions\Grammar.cs" />
+    <Compile Include="StringExtensions\Html.cs" />
+    <Compile Include="StringExtensions\Numbers.cs" />
+    <Compile Include="StringExtensions\NumberSystems.cs" />
+    <Compile Include="StringExtensions\BaseExtensions.cs" />
+    <Compile Include="StringExtensions\Simulator.cs" />
+    <Compile Include="StringExtensions\Transform.cs" />
+    <Compile Include="ThreadUtils.cs" />
+    <Compile Include="Types\Percent.cs" />
+    <Compile Include="UshortExtensions\BaseExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mtf.Core\Mtf.Core.csproj">
+      <Project>{934f82a9-7df7-4f71-b0b9-5c714e620a83}</Project>
+      <Name>Mtf.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
