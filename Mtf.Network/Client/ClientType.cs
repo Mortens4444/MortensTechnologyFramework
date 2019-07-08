@@ -23,11 +23,11 @@
 		FTP_DATA = 20,
 
 		/// <summary>FTP client (TCP/IP).</summary>
-		/// <seealso cref="FTPS_CONTROL"/>
+		/// <seealso cref="FTP_CONTROL"/>
 		FTPS_CONTROL = 990,
 
 		/// <summary>FTP client (TCP/IP).</summary>
-		/// <seealso cref="FTPS_DATA"/>
+		/// <seealso cref="FTP_DATA"/>
 		FTPS_DATA = 989,
 
 		/// <summary>IMAP client (TCP/IP).</summary>
