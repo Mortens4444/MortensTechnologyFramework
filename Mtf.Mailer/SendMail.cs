@@ -34,7 +34,7 @@ namespace Mtf.Mailer
         /// <summary>
         /// SendMail
         /// </summary>
-        /// <param name="base64">The SMTP server</param>
+        /// <param name="base64">Base64 encoder</param>
         /// <param name="smtpServer">The SMTP server</param>
         public SendMail(IBase64 base64, SmtpServer smtpServer)
         {
@@ -148,7 +148,7 @@ namespace Mtf.Mailer
             }
             if (parameter == String.Empty)
             {
-                throw new ArgumentException("Parameter is empty srting", parameterName);
+                throw new ArgumentException("Parameter is empty string", parameterName);
             }
         }
 
